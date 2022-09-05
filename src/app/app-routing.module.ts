@@ -16,6 +16,11 @@ const routes: Routes = [
         title: 'Dashboard',
         loadChildren: () => import('@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+      {
+        path: 'settings',
+        title: 'Settings',
+        loadChildren: () => import('@modules/settings/settings.module').then(m => m.SettingsModule)
+      },
     ]
   },
   {
