@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
         path: 'home',
-        title: 'Admin | Dashboard',
+        title: 'Dashboard',
         loadChildren: () => import('@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
     ]
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    title: 'Admin | Not found',
+    title: 'Not found',
     component: ErrorComponent,
   },
 ];
