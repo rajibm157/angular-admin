@@ -15,14 +15,15 @@ export class DefaultComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.observer.observe(['(max-width:800px)']).subscribe((res: any) => {
-      if (res.matches) {
-        setTimeout(() => {
+      setTimeout(() => {
+        if (res.matches) {
           this.sidenav.mode = 'over';
-          this.sidenav.close()
-        }, 0);
-      } else {
-        this.sidenav.mode = 'side';
-      }
+          this.sidenav.close();
+        } else {
+          this.sidenav.mode = 'side';
+          this.sidenav.open();
+        }
+      }, 0);
     })
   }
 
