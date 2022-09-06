@@ -4,16 +4,16 @@
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="login-form">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput>
+          <input matInput formControlName="email">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput>
+          <input matInput type="password" formControlName="password" minlength="6">
         </mat-form-field>
-        <button mat-button type="submit" class="sub-button">Login</button>
+        <button mat-button type="submit" class="sub-button" [disabled]="!loginForm.valid">Login</button>
       </form>
       <div class="footer-link">
         <p>Not a member? <a routerLink="/signup">Signup</a></p>
